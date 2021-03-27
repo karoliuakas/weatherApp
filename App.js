@@ -3,7 +3,7 @@ const mongodb = require('mongoose');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const axios = require('axios');
-const weatherRoute = require('./back/routes/weatherRouter.js');
+const weatherRoute = require('./back/routers/weatherRouter.js');
 var cors = require('cors')
 require('dotenv/config');
 
