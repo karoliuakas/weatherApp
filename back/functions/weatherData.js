@@ -1,4 +1,4 @@
-const putWeatherCelsius = () => {
+ const putWeatherCelsius = () => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     var raw = JSON.stringify({ "dayCelsius": temp });

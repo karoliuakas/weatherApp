@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const axios = require('axios');
 const weatherRoute = require('./back/routers/weatherRouter.js');
-var cors = require('cors')
+var cors = require('cors');
+const {showConsole,showConsoleOrSm} = require('./back/functions/weatherData.js');
 require('dotenv/config');
 
 //global variables
@@ -31,6 +32,7 @@ mongodb.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTo
 app.listen(port, () => {
 
     console.log(`Serveris paleistas unt ${port} porto :)`);
+
     weatherPutToDB();
     setInterval(weatherPutToDB, 100000);
 });
