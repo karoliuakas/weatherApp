@@ -1,3 +1,6 @@
+import { PDFDownloadLink, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import ReactDOM from 'react-dom';
+
 const styles = StyleSheet.create({
     page: {
       flexDirection: 'row',
@@ -10,7 +13,7 @@ const styles = StyleSheet.create({
     }
   });
 
-const MyDoc = () => (
+const MyFirstDoc = () => (
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
@@ -21,4 +24,4 @@ const MyDoc = () => (
     </Document>
   );
 
-  export {MyDoc};
+  export {MyFirstDoc};
