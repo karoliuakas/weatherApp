@@ -6,24 +6,7 @@ import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
 import { getWeatherCelsiusAverage, getWeatherCelsiusNow } from './actions/ApiActions';
 
-let { dateNTime, weatherNow } = getWeatherCelsiusNow();
-
-const apiPort = 5000;
-const apiHost = `http://localhost:${apiPort}`;
-const apiWeather = `weather`;
-
 function App() {
-  const styles = StyleSheet.create({
-    page: {
-      flexDirection: 'row',
-      backgroundColor: '#E4E4E4'
-    },
-    section: {
-      margin: 10,
-      padding: 10,
-      flexGrow: 1
-    }
-  });
   
   const [temp, setTemp] = useState();
   const [currentTempTime, setCurrentTempTime] = useState();
