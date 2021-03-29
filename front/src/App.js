@@ -1,16 +1,20 @@
 import Header from './components/Header';
-import { useState} from 'react';
-import Button from '@material-ui/core/Button';
-import { getWeatherCelsiusAverage, getWeatherCelsiusNow } from './actions/ApiActions';
-import { PDFDownloadLink, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
-import { MyFirstDoc } from './actions/PdfActions';
+import { useEffect, useState } from 'react';
+//import Button from '@material-ui/core/Button';
+import { getAllWeatherCelsius, getWeatherCelsiusAverage, getWeatherCelsiusNow } from './actions/ApiActions';
+import { BlobProvider } from '@react-pdf/renderer';
+import { AllWeatherData } from './actions/PdfActions';
+import Button from './components/Button.jsx';
 function App() {
 
   const [temp, setTemp] = useState();
   const [currentTempTime, setCurrentTempTime] = useState();
   const [tempMid, setTempMid] = useState(0);
-
+  // let data = getAllWeatherCelsius().then((items)=>{
+  //   data = items;
+  // });
   async function submitWeat() {
+    // data = await getAllWeatherCelsius().then((item)=> (item.obj))
     await setParams();
     return await setInterval(setParams, 5000);
   }
@@ -20,6 +24,18 @@ function App() {
     setCurrentTempTime(await dateNTime);
     setTempMid(await getWeatherCelsiusAverage());
   }
+let data;
+const [items, setItems] = useState();
+const getItems = () => fetch("http://localhost:5000/weather").then(res => res.json());
+  // const lol = async () =>{
+  // data = await getAllWeatherCelsius().then((item)=> (item.obj))
+  // console.log(data);
+  //   return await data;
+  // }
+
+  useEffect(() => {
+    getItems().then(data => setItems(data));
+  }, []);
   window.onload = submitWeat;
   return (
     <div className="container">
@@ -31,10 +47,15 @@ function App() {
 
       <h3>Vidutinė paros temperdatūra: {parseFloat(tempMid).toFixed(1)} °C</h3>
 
-      { <PDFDownloadLink document={< MyFirstDoc />} fileName="somename.pdf">
-      {({ blob, url, loading, error }) => (loading ? 'Loading document...' : <Button  variant="contained" color="secondary"> Atsisiusti pdf</Button>)}
-    </PDFDownloadLink> }
-      <Button variant="contained" color="secondary" onClick={() => { getWeatherCelsiusNow() }}>Refresh</Button>
+      <BlobProvider document={<AllWeatherData />}>
+        {({ url }) => (
+          <Button variant="contained" color="secondary" href={url} target="_blank">All weather data</Button>
+        )}
+      </BlobProvider>
+      <Button m={2} variant="contained" color="secondary" onClick={() => { getWeatherCelsiusNow() }}>Refresh</Button>
+      {items && items.map(item => (
+        <div key={item.id}>{item.dayCelsius}</div>
+      ))}
       <br />
       <br />
     </div>

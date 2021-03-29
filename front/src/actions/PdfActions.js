@@ -1,5 +1,6 @@
 import { PDFDownloadLink, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import ReactDOM from 'react-dom';
+import {getAllWeatherCelsius} from './ApiActions';
 
 const styles = StyleSheet.create({
     page: {
@@ -12,16 +13,26 @@ const styles = StyleSheet.create({
       flexGrow: 1
     }
   });
+  //let data;
+  //let data = getAllWeatherCelsius().then(text => console.log(text));
+  const alo = ()=> {
+      let data=getAllWeatherCelsius().then((item)=> console.log(item[0]))
+   }
 
-const MyFirstDoc = () => (
-    <Document>
+
+
+const AllWeatherData = () => (
+    <Document >
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
-          <Text>Section #1</Text>
+            {
+                
+            }
+            <Text>asadas</Text>
+          <Text>Important text ghahhhhaha</Text>
         </View>
-
       </Page>
     </Document>
   );
 
-  export {MyFirstDoc};
+  export {AllWeatherData};
