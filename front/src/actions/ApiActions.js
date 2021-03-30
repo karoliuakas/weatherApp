@@ -1,4 +1,3 @@
-
 const apiPort = 5000;
 const apiHost = `http://localhost:${apiPort}`;
 const apiWeather = `weather`;

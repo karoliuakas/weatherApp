@@ -2,17 +2,17 @@ import * as React from "react";
 import PdfDocument from "./PdfDocument";
 import TestDocument from "./TestDocument";
 
-const PDFLink= () => {
+const PDFLink = () => {
   const { useState } = React;
 
   const initialData = undefined;
+  const requestDataUrl = "http://localhost:5000/weather";
 
   const [error, setError] = useState(false);
   const [requesting, setRequesting] = useState(false);
   const [data, setData] = useState(initialData);
   const [attempts, setAttempts] = useState(0);
 
-  const requestDataUrl = "http://localhost:5000/weather";
 
   const fetchData = () => {
     setRequesting(true);
@@ -39,14 +39,11 @@ const PDFLink= () => {
       )}
       {requesting && (
         <span>
-        Getting document...
+          Getting document...
         </span>
       )}
       {data && !requesting && !error && (
-        <PdfDocument
-          title="ORAI"
-          document={<TestDocument data={data} />}
-        />
+        <PdfDocument document={<TestDocument data={data} />} />
       )}
       {!requesting && error && (
         <>

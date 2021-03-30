@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 //import Button from '@material-ui/core/Button';
 import { getAllWeatherCelsius, getWeatherCelsiusAverage, getWeatherCelsiusNow } from './actions/ApiActions';
 import { BlobProvider } from '@react-pdf/renderer';
-import { AllWeatherData } from './actions/PdfActions';
 import Button from './components/Button.jsx';
 import Container from '@material-ui/core/Container';
 import PDFLink from './actions/PdfLink.js';
@@ -50,7 +49,7 @@ function App() {
       <br></br>
       <h3>Right now it is: {temp} °C </h3>
 
-      <span style={{ 'fontSize': '10px' }}>(Updated: {currentTempTime})</span>
+      <span style={{ 'fontSize': '10px' }}>(DataBase updated: {currentTempTime})</span>
 
       <h3>Daily average temperature: {parseFloat(tempMid).toFixed(1)} °C</h3>
 
