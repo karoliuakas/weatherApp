@@ -60,7 +60,6 @@ const getAllWeatherCelsius = async () => {
         .then(response => {
             return response.json();
         }).then((jsonData => {
-        
             obj = jsonData;
         }
         ));

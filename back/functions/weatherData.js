@@ -12,6 +12,6 @@
       .then(response => response.text())
       .then(result => console.log(result))
 
-      console.log("Ivyko 3")
+      console.log("Ivyko 3");
   }
 
