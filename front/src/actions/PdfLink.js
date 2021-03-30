@@ -1,7 +1,6 @@
 import * as React from "react";
 import PdfDocument from "./PdfDocument";
 import TestDocument from "./TestDocument";
-import {getAllWeatherCelsius} from './ApiActions';
 
 const PDFLink= () => {
   const { useState } = React;

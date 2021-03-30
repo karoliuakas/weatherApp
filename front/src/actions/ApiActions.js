@@ -54,16 +54,4 @@ const getWeatherCelsiusNow = async () => {
     }
 };
 
-const getAllWeatherCelsius = async () => {
-    var obj;
-    await fetch('http://localhost:5000/weather')
-        .then(response => {
-            return response.json();
-        }).then((jsonData => {
-            obj = jsonData;
-        }
-        ));
-        
-    return {obj};
-}
-export { getWeatherCelsiusAverage, getWeatherCelsiusNow, getAllWeatherCelsius };
+export { getWeatherCelsiusAverage, getWeatherCelsiusNow};
