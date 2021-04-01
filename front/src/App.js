@@ -49,7 +49,7 @@ function App() {
       <br></br>
       <h3>Right now it is: {temp} °C </h3>
 
-      <span style={{ 'fontSize': '10px' }}>(DataBase updated: {currentTempTime})</span>
+      <span style={{ 'fontSize': '10px' }}>(DB updated: {currentTempTime})</span>
 
       <h3>Daily average temperature: {parseFloat(tempMid).toFixed(1)} °C</h3>
 
