@@ -1,12 +1,12 @@
 import React from 'react';
 import {Text, View, StyleSheet } from '@react-pdf/renderer';
 
-const borderColor = '#90e5fc'
+const borderColor = '#101010'
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        borderBottomColor: '#bff0fd',
-        backgroundColor: '#bff0fd',
+        borderBottomColor: '#101010',
+        backgroundColor: '#ffffff',
         borderBottomWidth: 1,
         alignItems: 'center',
         height: 24,
@@ -15,31 +15,19 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
     description: {
-        width: '60%',
+        width: '80%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
     },
     qty: {
-        width: '10%',
-        borderRightColor: borderColor,
-        borderRightWidth: 1,
-    },
-    rate: {
-        width: '15%',
-        borderRightColor: borderColor,
-        borderRightWidth: 1,
-    },
-    amount: {
-        width: '15%'
+        width: '20%'
     },
   });
 
   const ItemsTableHeader = () => (
     <View style={styles.container}>
-        <Text style={styles.description}>Item Description</Text>
-        <Text style={styles.qty}>Qty</Text>
-        <Text style={styles.rate}>@</Text>
-        <Text style={styles.amount}>Amount</Text>
+        <Text style={styles.description}>Date of weather</Text>
+        <Text style={styles.qty}>Day celsius</Text>
     </View>
   );
   

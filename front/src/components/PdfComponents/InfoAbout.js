@@ -13,13 +13,10 @@ const styles = StyleSheet.create({
   });
 
 
-  const InfoAbout = ({items}) => (
+  const InfoAbout = () => (
     <View style={styles.headerContainer}>
-        <Text style={styles.billTo}>Bill To:</Text>
-        <Text>Karolis Žilevičius</Text>
-        <Text>Vilnius</Text>
-        <Text>+37060311379</Text>
-        <Text>karolis.zilevicius@gmail.com</Text>
+        <Text style={styles.billTo}>Document created by:</Text>
+        <Text>K.Ž.</Text>
     </View>
   );
   

@@ -13,16 +13,16 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         marginTop: 24,
         borderWidth: 1,
-        borderColor: '#bff0fd',
+        borderColor: '#101010',
     },
 });
 
-  const ItemsTable = ({data}) => (
+  const ItemsTable = ({items}) => (
     <View style={styles.tableContainer}>
         <ItemsTableHeader />
-        <ItemsTableRow items={data} />
-        <ItemsTableBlankSpace rowsCount={ tableRowsCount - 5} />
-        <ItemsTableFooter items={data} />
+        <ItemsTableRow items={items} />
+       {/*  <ItemsTableBlankSpace rowsCount={ 3} /> */}
+        <ItemsTableFooter items={items} />
     </View>
   );
   

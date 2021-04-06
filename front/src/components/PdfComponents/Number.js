@@ -22,15 +22,15 @@ const styles = StyleSheet.create({
   });
 
 
-  const Number= ({data}) => (
+  const Number= () => (
         <Fragment>
             <View style={styles.invoiceNoContainer}>
                 <Text style={styles.label}>Invoice No:</Text>
-                <Text style={styles.invoiceDate}>123456789</Text>
+                <Text style={styles.invoiceDate}>{Math.floor(Math.random() * 9999999999) + 1000000000}</Text>
             </View >
             <View style={styles.invoiceDateContainer}>
-                <Text style={styles.label}>Date: </Text>
-                <Text >2021-04-20</Text>
+                <Text style={styles.label}> Date:</Text>
+                <Text style={styles.invoiceDate}>{new Date().toLocaleDateString()}</Text>
             </View >
         </Fragment>
   );

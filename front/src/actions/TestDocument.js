@@ -39,22 +39,19 @@ const TestDocument = ({ data }) => {
       <Page size="A4" style={styles.page} >
         <Image style={styles.logo} src={logo} />
         <Header title='Statistic about weather' />
-        <Number items={data} />
-        <InfoAbout items={data} />
+        <Number />
+        <InfoAbout />
         <ItemsTable items={data} />
         <Sign />
-        </Page>
-        <Page>
           {data.map(item => (
           <Text key={item._id}  >
             [{counter += 1}] - Data: {(item.date).slice(0, 10)} {(item.date).slice(11, 16)} Laipsniai: {item.dayCelsius}°C
           </Text>
         ))}
-        </Page>
         <Text>
         </Text>
         <Text>No more data =/</Text>
-     
+       </Page>
     </Document>
   );
 };

@@ -17,19 +17,17 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         borderRightColor: borderColor,
         borderRightWidth: 1,
-        paddingRight: 8,
+        paddingRight: 8
     },
     total: {
         width: '15%',
         textAlign: 'right',
-        paddingRight: 8,
+        paddingRight: 8
     },
   });
 
 
-const ItemsTableFooter = ({items}) => {
-    // const total = items.map(item => item.qty * item.rate)
-    //     .reduce((accumulator, currentValue) => accumulator + currentValue , 0)
+const ItemsTableFooter = () => {
     return(    
         <View style={styles.row}>
             <Text style={styles.description}>TOTAL</Text>
