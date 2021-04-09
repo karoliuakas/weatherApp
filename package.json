@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build":"cd frontend && npm install && npm run build",
     "start": "nodemon App.js"
   },
   "author": "",
@@ -18,5 +19,6 @@
     "mongoose": "^5.11.15",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7"
-  }
+  },
+  "engines": {"node": "12.4.0","npm": "6.9.0"}
 }
