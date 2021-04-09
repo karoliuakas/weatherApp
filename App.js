@@ -14,12 +14,8 @@ const port = 5000;
 let host = `http://localhost:${port}`;
 var weatherNow =0;
 const app = express();
-const _dirname = path.resolve();
 app.use(bodyParser.json());
-app.use(express.static(path.join(_dirname,'/front/build')));
-app.get('*',(req,res)=>
-    res.sendFile(path.join(_dirname,'/front/build/index.html'))
-);
+
 app.use(cors());
 app.disable('etag');
 app.use('/weather', weatherRoute);
