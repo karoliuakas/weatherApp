@@ -19,7 +19,6 @@ app.use(express.static(path.join(__dirname,'front/build')));
 app.get('*', (req,res)=>
 res.sendFile(path.join(__dirname,'front/build/index.html'))
 );
-app.use(cors());
 app.disable('etag');
 app.use('/weather', weatherRoute);
 //keliai
