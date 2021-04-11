@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const axios = require('axios');
 const weatherRoute = require('./back/routers/weatherRouter.js');
-var cors = require('cors');
 const {showConsole,showConsoleOrSm} = require('./back/functions/weatherData.js');
 require('dotenv/config');
 const path  = require('path');
