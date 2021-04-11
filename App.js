@@ -32,7 +32,7 @@ mongodb.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTo
     console.log('prisijungtaa prie DB :)');
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
 
     console.log(`Serveris paleistas unt ${port} porto :)`);
 
