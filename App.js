@@ -11,7 +11,7 @@ const path  = require('path');
 
 //global variables
 __dirname = path.resolve();
-const port = 5000;
+const port = process.env.PORT || port;
 let host = `http://localhost:${port}`;
 var weatherNow =0;
 const app = express();
@@ -32,7 +32,7 @@ mongodb.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTo
     console.log('prisijungtaa prie DB :)');
 })
 
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
 
     console.log(`Serveris paleistas unt ${port} porto :)`);
 
