@@ -1,10 +1,10 @@
-const apiPort = 5000;
+const apiPort = process.env.PORT || 5000;
 const apiHost = `http://localhost:${apiPort}`;
 const apiWeather = `weather`;
 
 const getWeatherCelsiusAverage = async () => {
     var midTemp;
-    await fetch('http://localhost:5000/weather')
+    await fetch(`${apiHost}/weather`)
         .then(response => {
             return response.json();
         })
