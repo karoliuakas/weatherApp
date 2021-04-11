@@ -4,21 +4,23 @@ const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const axios = require('axios');
 const weatherRoute = require('./back/routers/weatherRouter.js');
+var cors = require('cors');
 const {showConsole,showConsoleOrSm} = require('./back/functions/weatherData.js');
 require('dotenv/config');
 const path  = require('path');
 
 //global variables
 __dirname = path.resolve();
-const port = process.env.PORT || port;
+const port = process.env.PORT || 5000;
 let host = `http://localhost:${port}`;
 var weatherNow =0;
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'front/build')));
 app.get('*', (req,res)=>
-res.sendFile(path.join(__dirname,'front/build/index.html'))
+res.sendFile(path.join(__dirname,'front/public/index.html'))
 );
+app.use(cors());
 app.disable('etag');
 app.use('/weather', weatherRoute);
 //keliai
